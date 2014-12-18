@@ -30,12 +30,12 @@ import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.aop.support.DefaultIntroductionAdvisor;
 import org.springframework.aop.support.DelegatingIntroductionInterceptor;
 
-public class Composite&lt;D&gt;{
+public class Composite<D>{
 
-	private List&lt;Object&gt; instances = new ArrayList&lt;Object&gt;();
-	private Class&lt;D&gt; returnType;
+	private List<Object> instances = new ArrayList<Object>();
+	private Class<D> returnType;
 	
-	private Composite(Class&lt;D&gt; returnType){
+	private Composite(Class<D> returnType){
 		this.returnType = returnType;
 	}
 	
@@ -43,16 +43,16 @@ public class Composite&lt;D&gt;{
 		this(null);
 	}
 	
-	public static &lt;A&gt; Composite&lt;A&gt; create(Class&lt;A&gt; a){
-		return new Composite&lt;A&gt;(a);
+	public static <A> Composite<A> create(Class<A> a){
+		return new Composite<A>(a);
 	}
 	
 	@SuppressWarnings("rawtypes")
-	public static Composite&lt;?&gt; create(){
+	public static Composite<?> create(){
 		return new Composite();
 	}
 	
-	public Composite&lt;D&gt; mixin(Object... o){
+	public Composite<D> mixin(Object... o){
 		for (Object object : o) {
 			instances.add(object);
 		}
