@@ -18,7 +18,7 @@ date: 2012-06-05
 
 <p>The implementation of a class that builds these kinds of the proxies can be seen below: 
 
-<pre class="prettyprint linenums">
+{% highlight java %}
 
 package uk.co.optimisticpanda.spring.proxy;
 
@@ -84,12 +84,11 @@ public class Composite&lt;D&gt;{
 	}
 	
  }
-
-</pre>
+{% endhighlight %}
 
 <p>The below unit test shows how this is used:</p> 
 
-<pre class="prettyprint linenums">
+{% highlight java %}
 package uk.co.optimisticpanda.spring.proxy;
 
 import junit.framework.TestCase;
@@ -158,7 +157,7 @@ public class CompositeTest extends TestCase{
 	public interface IAandB extends IA,IB {	}
 
 }
-</pre>
+{% endhighlight %}
 
 <p>With this class, I was able to create one interface that extended all of the existing datahelper interfaces. I then mixed in all of the existing datahelper implementations and created a composite as the shared interface. 
 This was a nice way of getting rid of 3.5K lines of code but there are deeper issues at hand that lead to this in the first place. The existing class was a bit of a god object and this has just been a nifty way to replace it with something slightly more maintainable.
