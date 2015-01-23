@@ -40,6 +40,6 @@ The project can be found [here](https://github.com/plasma147/clj-noughts-and-cro
   </div>
 </div>
 
-<script type="text/javascript" src="/clj-noughts-and-crosses/game.js"></script>
+<!-- script type="text/javascript" src="/clj-noughts-and-crosses/game.js"></script -->
 <br style="clear:both;">
 
